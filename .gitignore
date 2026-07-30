@@ -1,0 +1,7 @@
+.pio/
+.vscode/
+*.bin
+*.elf
+__pycache__/
+src/decode/drivers_generated.cpp
+test/test_vectors/generated_*.h
