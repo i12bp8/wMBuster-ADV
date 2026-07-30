@@ -10,8 +10,7 @@ Built for performance and reliability, wM-Buster ADV natively supports zero-touc
 * **Universal Heuristic Decoding Engine**: No need for manual patches. The engine uses a 3-pass heuristic search (Exact match -> Type match -> Manufacturer match) to decode payloads even for unlisted or newly deployed meters.
 * **Live Configuration**: Change listen modes (C1/T1 vs S1) or rescan for new hardware via the settings menu—applied instantly without rebooting.
 * **Optimized RF Drivers**: Custom implementations of RadioLib pipelines to prevent hardware FIFO overflows (e.g. CC1101 64-byte limitation) and ensure maximum capture reliability.
-* **Premium UI**: Smooth animations, dual-card layouts, and an intuitive carousel menu.
-
+  
 ## Hardware Requirements
 
 * [M5Stack Cardputer](https://m5stack.com/products/m5stack-cardputer)
@@ -26,10 +25,6 @@ You can flash the compiled firmware directly to your Cardputer.
 1. Download `firmware.bin` from the [Releases](https://github.com/pingequalab/cardputer-adv-hydra-rf/releases) page.
 2. Use [esptool](https://github.com/espressif/esptool) or the Web Flasher of your choice to flash the `.bin` file to offset `0x0`.
 
-Alternatively, via esptool:
-```bash
-esptool.py -p /dev/ttyACM0 -b 115200 --before default_reset --after hard_reset --chip esp32s3 write_flash --flash_mode dio --flash_freq 80m --flash_size 8MB 0x0 firmware.bin
-```
 
 ## Build from Source
 
@@ -46,6 +41,9 @@ pio run -e m5stack-cardputer-adv
 # Upload to your Cardputer
 pio run -e m5stack-cardputer-adv -t upload
 ```
+## Credits
+
+[wmbusmeters](https://github.com/wmbusmeters/wmbusmeters) - The biggest underlying source of this project!
 
 ## License
 GPL-3.0 License.
